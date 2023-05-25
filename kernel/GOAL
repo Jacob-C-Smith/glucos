@@ -1,0 +1,86 @@
+An operating system based off of stacks
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The shell will function like this
+
+[0] <--- stack depth
+VALUE > _ 
+^       ^
+|       |
+|       +--- The keyboard cursor
++----------- The context value
+
+
+
+
+
+
+
+
+
+// Intro. Put hello world in the context
+GlucOS v -1.0
+
+[0] 1
+> "Hello, world!" [RETURN]
+
+// Assign context to a variable
+[0] 2
+"Hello, world!" > var_1  [RETURN]
+
+// Append a string to the context, transforming it to a list
+VARS[0]:
+var1 : string = "Hello, world!"
+
+[0] 3
+"Hello, world!" > , "Hello, friend!"  [RETURN]
+
+// Assign the context to a variable
+[0] 4
+["Hello, world!", "Hello, friend!"] > greetings [RETURN]
+
+// Index the context
+VARS[0]:
+var1 : string = "Hello, world!"
+greetings : list = ["Hello, world!", "Hello, friend!"]
+
+[0] 5
+["Hello, world!", "Hello, friend!"] > [0] [RETURN]
+
+// Clear the context
+[0] 6
+"Hello, world!" > [ESCAPE]
+
+// Start a function definition
+[0] 7
+> \t [RETURN]
+
+    // write output to stdout
+    [1] 0
+    [PARAMETER] > stdout [RETURN]
+
+    // exit
+    [1] 1
+    [PARAMETER] > < 0 // <--- return 0. Could be [PARAMETER], or any variable 
+
+// Store the function
+[0] 8
+function@0x944c3ddf > print [RETURN]
+
+// Set the context
+[0] 9
+function@0x944c3ddf > [ESCAPE]
+
+
+// Set the context
+[0] 10
+> greetings [RETURN]
+
+// Print the context
+STDOUT:
+["Hello, world!", "Hello, friend!"]
+
+[0] 11
+// Print the 
+

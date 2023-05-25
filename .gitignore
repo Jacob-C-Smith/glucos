@@ -1,5 +1,23 @@
 # Prerequisites
 *.d
+OVMFbin/
+gnu-efi/x86_64
+gnu-efi/inc
+gnu-efi/lib
+gnu-efi/apps/
+gnu-efi/gnuefi
+gnu-efi/ChangeLog
+gnu-efi/Make.defaults
+gnu-efi/Make.rules
+gnu-efi/Makefile
+gnu-efi/RREADME.elilo
+gnu-efi/README.gnuefi
+gnu-efi/README.efilib
+gnu-efi/README.elilo
+gnu-efi/README.git
+gnu-efi/bootloader/Makefile
+.vscode/
+kernel/bin/
 
 # Object files
 *.o
