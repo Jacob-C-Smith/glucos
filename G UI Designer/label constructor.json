@@ -1,0 +1,78 @@
+{
+    "name"     : " Label constructor ",
+    "width"    : 224,
+    "height"   : 112,
+    "elements" : [
+        {
+            "type"         : "LABEL",
+            "name"         : "label_text",
+            "text"         : "text :",
+            "x"            : 16,
+            "y"            : 16
+        },
+        {
+            "type"         : "LABEL",
+            "name"         : "label_x",
+            "text"         : "x    :",
+            "x"            : 16,
+            "y"            : 34
+        },
+        {
+            "type"         : "LABEL",
+            "name"         : "label_y",
+            "text"         : "y    :",
+            "x"            : 16,
+            "y"            : 52
+        },
+        {
+            "type"         : "LABEL",
+            "name"         : "label_name",
+            "text"         : "name :",
+            "x"            : 16,
+            "y"            : 70
+        },
+        {
+            "type"        : "TEXT INPUT",
+            "name"        : "label_text_input",
+            "x"           : 64,
+            "y"           : 13,
+            "text"        : "",
+            "placeholder" : "",
+            "char limit"  : 64
+        },
+        {
+            "type"        : "TEXT INPUT",
+            "name"        : "label_x_input",
+            "x"           : 64,
+            "y"           : 31,
+            "text"        : "",
+            "placeholder" : "",
+            "char limit"  : 64
+        },
+        {
+            "type"        : "TEXT INPUT",
+            "name"        : "label_y_input",
+            "x"           : 64,
+            "y"           : 49,
+            "text"        : "",
+            "placeholder" : "",
+            "char limit"  : 64
+        },
+        {
+            "type"        : "TEXT INPUT",
+            "name"        : "label_name_input",
+            "x"           : 64,
+            "y"           : 67,
+            "text"        : "",
+            "placeholder" : "",
+            "char limit"  : 64
+        },
+        {
+            "type"     : "BUTTON",
+            "name"     : "label_submit",
+            "text"     : "Construct",
+            "x"        : 136,
+            "y"        : 88
+        }
+    ]
+}

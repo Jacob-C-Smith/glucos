@@ -9,13 +9,21 @@
 // Include
 #include <string.h>
 
-size_t string_length ( char *str )
+/*
+struct string_s {
+    char    *str;
+    size_t   len;
+    u64     *hash;
+    int    (*copy)(string *p_str, string **pp_str);
+};*/
+
+size_t strlen ( char *p_str )
 {
     
     // Argument check
     {
         #ifndef G_DEBUG
-            if ( str == (void *) 0 )
+            if ( p_str == (void *) 0 )
                 goto no_str;
         #endif
     }
@@ -23,7 +31,8 @@ size_t string_length ( char *str )
     // Initialized data
     size_t len = 0;
 
-    // TODO: Compute the length of the string
+    // Compute the length of the string
+    while(p_str[++len]);
 
     // Return the length of the string
     return len;

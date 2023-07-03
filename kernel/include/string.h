@@ -11,6 +11,7 @@
 
 // Include 
 #include <core/g.h>
+#include <core/gtypes.h>
 
 /** !
  * String length
@@ -20,4 +21,4 @@
  * @return length of string : size_t 
  * 
 */
-size_t string_length ( char *str );
+size_t strlen ( char *p_str );

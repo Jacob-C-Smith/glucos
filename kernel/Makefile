@@ -1,5 +1,4 @@
-
-OSNAME = CustomOS
+OSNAME = GlucOS
 
 GNUEFI = ../gnu-efi
 OVMFDIR = ../OVMFbin
@@ -7,7 +6,7 @@ LDS = linker.ld
 CC = gcc
 LD = ld
 
-CFLAGS = -ffreestanding -fshort-wchar
+CFLAGS = -ffreestanding -fshort-wchar -nostdlib
 LDFLAGS = -T $(LDS) -static -Bsymbolic -nostdlib
 
 SRCDIR := core
@@ -43,4 +42,7 @@ buildimg:
 	mcopy -i $(BUILDDIR)/$(OSNAME).img $(BUILDDIR)/kernel.elf ::
 
 run:
-	qemu-system-x86_64 -drive file=$(BUILDDIR)/$(OSNAME).img -m 256M -cpu qemu64 -drive if=pflash,format=raw,unit=0,file="$(OVMFDIR)/OVMF_CODE-pure-efi.fd",readonly=on -drive if=pflash,format=raw,unit=1,file="$(OVMFDIR)/OVMF_VARS-pure-efi.fd" -net none
+	qemu-system-x86_64.exe -drive file=$(BUILDDIR)/$(OSNAME).img -m 256M -cpu qemu64 -drive if=pflash,format=raw,unit=0,file="$(OVMFDIR)/OVMF_CODE-pure-efi.fd",readonly=on -drive if=pflash,format=raw,unit=1,file="$(OVMFDIR)/OVMF_VARS-pure-efi.fd" -net none
+
+copy_to_usb:
+	cp $(BUILDDIR)/kernel.elf /mnt/g/kernel.elf

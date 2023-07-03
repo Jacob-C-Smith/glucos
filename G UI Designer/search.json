@@ -1,0 +1,16 @@
+{
+    "name"     : " Search ",
+    "width"    : 224,
+    "height"   : 112,
+    "elements" : [
+        {
+            "type"        : "TEXT INPUT",
+            "name"        : "label_text_input",
+            "x"           : 16,
+            "y"           : 16,
+            "text"        : "",
+            "placeholder" : "",
+            "char limit"  : 64
+        }
+    ]
+}

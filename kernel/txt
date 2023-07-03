@@ -1,0 +1,27 @@
+[H[2J[3Jmkdir -p /mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/lib
+make -C /mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/lib -f /mnt/c/Users/j/Desktop/C/glucos/gnu-efi//lib/Makefile SRCDIR=/mnt/c/Users/j/Desktop/C/glucos/gnu-efi//lib ARCH=x86_64
+make[1]: Entering directory '/mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/lib'
+for sdir in ia32 x86_64 ia64 aarch64 arm mips64el runtime; do mkdir -p $sdir; done
+make[1]: Leaving directory '/mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/lib'
+mkdir -p /mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/gnuefi
+make -C /mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/gnuefi -f /mnt/c/Users/j/Desktop/C/glucos/gnu-efi//gnuefi/Makefile SRCDIR=/mnt/c/Users/j/Desktop/C/glucos/gnu-efi//gnuefi ARCH=x86_64
+make[1]: Entering directory '/mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/gnuefi'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/gnuefi'
+mkdir -p /mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/bootloader
+make -C /mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/bootloader -f /mnt/c/Users/j/Desktop/C/glucos/gnu-efi//bootloader/Makefile SRCDIR=/mnt/c/Users/j/Desktop/C/glucos/gnu-efi//bootloader ARCH=x86_64
+make[1]: Entering directory '/mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/bootloader'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/c/Users/j/Desktop/C/glucos/gnu-efi/x86_64/bootloader'
+!=== COMPILING core/terminal.c ===!
+gcc -ffreestanding -fshort-wchar -nostdlib -c core/terminal.c -o lib/terminal.o -I include
+!=== LINKING ===!
+ld -T linker.ld -static -Bsymbolic -nostdlib -o bin/kernel.elf  lib/view.o  lib/g.o  lib/terminal.o  lib/main.o  lib/canvas.o  lib/string.o
+!=== LINKING ===!
+ld -T linker.ld -static -Bsymbolic -nostdlib -o bin/kernel.elf  lib/view.o  lib/g.o  lib/terminal.o  lib/main.o  lib/canvas.o  lib/string.o
+!=== LINKING ===!
+ld -T linker.ld -static -Bsymbolic -nostdlib -o bin/kernel.elf  lib/view.o  lib/g.o  lib/terminal.o  lib/main.o  lib/canvas.o  lib/string.o
+cp bin/blank_image.img bin/GlucOS.img
+mformat -i bin/GlucOS.img -f 1440 ::
+mmd -i bin/GlucOS.img ::/EFI
+mmd -i bin/GlucOS.img ::/EFI/BOOT

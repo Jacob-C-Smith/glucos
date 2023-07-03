@@ -1,0 +1,30 @@
+{
+    "name"          : "G UI Designer",
+    "version"       : 1,
+    "operations"    : [
+        {
+            "name" : "Construct Button"
+        },
+        {
+            "name" : "Construct Label"
+        },
+        {
+            "name" : "Search"
+        },
+        {
+            "name" : "New"
+        },
+        {
+            "name" : "Save"
+        },
+        {
+            "name" : "Load"
+        },
+        {
+            "name" : "Export"
+        },
+        {
+            "name" : "Import"
+        }
+    ]
+}

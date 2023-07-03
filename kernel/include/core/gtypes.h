@@ -7,7 +7,8 @@
 */
 
 // Include guard
-#pragma once
+#ifndef GTYPES
+#define GTYPES
 
 // Type definitions
 
@@ -18,9 +19,9 @@ typedef signed   char      s8;
 typedef unsigned short     u16;
 typedef          short     i16;
 typedef signed   short     s16;
-typedef unsigned long      u32;
-typedef          long      i32;
-typedef signed   long      s32;
+typedef unsigned int       u32;
+typedef          int       i32;
+typedef signed   int       s32;
 typedef unsigned long long u64;
 typedef          long long i64;
 typedef signed   long long s64;
@@ -54,6 +55,75 @@ typedef struct
     float a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p;
 } mat4;
 
+typedef struct kernel_s      kernel;
+typedef struct framebuffer_s framebuffer;
+typedef struct pixel_s       pixel;
+typedef struct view_s        view;
+typedef struct canvas_s      canvas;
+typedef struct terminal_s    terminal;
+typedef struct string_s      string;
+
+// Framebuffer
+struct framebuffer_s
+{
+	void               *p_base;
+	unsigned long long  size;
+	unsigned int        width;
+	unsigned int        height;
+	unsigned int        pixels_per_scanline;
+};
+
+// Pixel
+struct pixel_s
+{
+    u8 b, g, r, a;
+};
+
+// Framebuffer view
+struct view_s {
+    framebuffer *p_framebuffer;
+    size_t       abs_x,
+                 abs_y,
+                 width,
+                 height;
+};
+
+// Canvas
+struct canvas_s;
+
+// Terminal
+struct terminal_s {
+    view   _view;
+    size_t rows,
+           columns,
+           row,
+           column,
+           size;
+    pixel  foreground,
+           background;
+};
+
+// Kernel
+struct kernel_s {
+    struct {
+        framebuffer *p_framebuffer;
+        terminal     _terminal;
+    } context;
+    
+    void *p_rsdp;
+};
+
+
+
+// String
+struct string_s;
+
+// List
+
+// Array
+
+// Queue
+
 // Functions
 
 /** ! 
@@ -61,3 +131,5 @@ typedef struct
  * 
  * 
  */
+
+#endif
